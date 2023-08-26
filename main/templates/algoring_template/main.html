@@ -1,0 +1,33 @@
+{#{% extends 'bootstrap4/main.html' %}#}
+
+{% load static %}
+
+{#{% block title %}CRF Revision Update Tool{% endblock %}#}
+
+{% block meta %}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% endblock %}
+
+{% block default_css_files %}
+    {% if main_css %}
+        <link href="{{ main_css }}" rel="stylesheet">
+{#        <link href="/static/css/portal-bs4.css" rel="stylesheet">#}
+    {% endif %}
+{% endblock %}
+
+{% block bodytag %}
+    <body>
+{% endblock %}
+
+{% block content %}
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" class="pb-3"></div>
+{% endblock %}
+
+{% block js_files %}
+    {% if main_js %}
+        <script type="text/javascript" src="{{ main_js }}"></script>
+    {% endif %}
+{% endblock %}
