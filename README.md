@@ -1,6 +1,6 @@
-# ALGORING
+# ALGORING :dango:
 
-Local에 설치하는 법
+Local에 설치하기
 
 1. 프론트앤드 노드 패키지 다운받기
 ~~~
@@ -29,6 +29,7 @@ python manage.py migrate
 python manage.py runserver --noreload
 ~~~
 
-*프론트엔드 업데이트 시 빌드 꼭 
+
+*프론트엔드 업데이트 시 빌드!
 
 알고링 화이팅! :dancer:
