@@ -4,7 +4,7 @@ Local에 설치하기
 
 1. 프론트앤드 노드 패키지 다운받기
 ~~~
-yarn install
+static -> algoring_react 들어가서 yarn install
 ~~~
 2. 가상환경 만들기
 ~~~
