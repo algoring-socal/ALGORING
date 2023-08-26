@@ -16,6 +16,9 @@ source ~/...[이름]/bin/activate
 ~~~
 pip install -r requirements.txt
 ~~~
+
+3.5 Gitignore 프론트, 백 추가하기
+
 4. 데이터베이스 만들기
 ~~~
 algoring_v1
