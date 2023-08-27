@@ -15,6 +15,8 @@ source ~/...[이름]/bin/activate
 3. 백앤드 패키지 다운받기
 ~~~
 pip install -r requirements.txt
+
+깜빡한 pip install djangorestframework
 ~~~
 
 3.5 Gitignore 프론트, 백 추가하기
