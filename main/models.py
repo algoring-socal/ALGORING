@@ -5,6 +5,7 @@ class Character(models.Model):
     name = models.CharField(max_length=40)
     display = models.IntegerField(default=0)
 
+
 class LogReport(models.Model):
     character = models.ForeignKey(Character, on_delete=models.CASCADE)
     level = models.IntegerField(default=1)

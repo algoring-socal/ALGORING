@@ -40,7 +40,7 @@ class UrlSubmit(APIView):
         POST request to initiate, validate, save a log of url submission.
         """
         url_submit_controller = UrlSubmitController(
-            url_submitted=request.data.get('url_submit')
+            url_submitted=request.data.get('url_input')
         )
 
         res = url_submit_controller.validate()

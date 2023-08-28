@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
+.title_centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #d3f7ff, #cccbff);
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo_img_container {
+  width: 170px; /* Set the desired width of the container */
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo_img_container img {
+  max-width: 100%; /* Restrict the image width to not exceed the container */
+  max-height: 100%; /* Restrict the image height to not exceed the container */
+  display: block; /* Remove any extra spacing below the image */
 }
 
-.App-link {
-  color: #61dafb;
+.main_img_border {
+  /* border: 8px solid blue; */
+  border-width: 8px;
+  border-image: linear-gradient(to bottom, #5f9fff, #105ac7) 1;
+  border-style: solid;
+  border-radius: 25px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.overlay_char_image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%; /* Adjust as needed */
+  height: auto;
 }

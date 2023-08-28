@@ -9,6 +9,7 @@ class CharacterSerializer(serializers.ModelSerializer):
         model = Character
         fields = '__all__'
 
+
 class LogReportSerializer(serializers.ModelSerializer):
     character = CharacterSerializer()
 

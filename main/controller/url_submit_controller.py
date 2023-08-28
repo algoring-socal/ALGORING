@@ -39,7 +39,6 @@ class UrlSubmitController:
     def create_log_report(self):
         if LogReport.objects.exists():
             latest_instance = LogReport.objects.latest('pk')
-            print(LogReport.objects.values().latest('pk'))
             self.log_report = LogReport(
                 character_id=latest_instance.character_id,
                 level=latest_instance.level,
@@ -61,23 +60,23 @@ class UrlSubmitController:
 
     def validate_url(self):
 
-        required_srt = "leetcode.com"
+        required_str = "leetcode.com"
 
-        if required_srt in self.url_submitted:
-            self.log_report.is_successfully_validated=True
+        if required_str in self.url_submitted:
+            self.log_report.is_successfully_validated = True
             self.log_report.save()
 
             return {'success': True}
 
         else:
-            self.log_report.is_successfully_validated=False
+            self.log_report.is_successfully_validated = False
             self.log_report.save()
 
             return {'success': False}
 
     def update_exp_and_check_level(self):
 
-        self.log_report.exp += 20
+        self.log_report.exp += 25
 
         # check if exp is 100
         if self.log_report.exp == 100:
