@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Col } from "reactstrap";
 import UrlModalBtn from "../components/UrlModalBtn";
 import logo from "../img/03.Algoring Logo.png";
@@ -12,6 +13,7 @@ import penguin_3 from "../img/penguin3.png";
 import woopa_1 from "../img/woopa1.png";
 import woopa_2 from "../img/woopa2.png";
 import woopa_3 from "../img/woopa3.png";
+import inventoryBtn from "../img/03.Library_Fill_40px.png";
 
 const MainPage = () => {
   const [responseData, setResponseData] = useState();
@@ -49,6 +51,18 @@ const MainPage = () => {
             aria-valuemax="100"
           ></div>
         </div>
+
+        {/* Inventory button */}
+        <NavLink to={"/inventory"}>
+        <div>
+          <img
+            style={{ width: "40px" }}
+            className=""
+            src={inventoryBtn}
+            alt="Inventory Button"
+          />
+        </div>
+      </NavLink>
 
         {/* Character window */}
         {isLoading ? ( // Render Loading if isLoading state is true
