@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Col } from "reactstrap";
 import UrlModalBtn from "../components/UrlModalBtn";
 import logo from "../img/03.Algoring Logo.png";
+import duckBg from "../img/duck BG.png";
+import penguinBg from "../img/penguin BG.png";
 import woopaBg from "../img/woopa BG.png";
 import duck_1 from "../img/duck1.png";
 import duck_2 from "../img/duck2.png";
@@ -21,6 +23,18 @@ const MainPage = () => {
 
   //   todo: when on mount we need to fetch data (get) of the latest Log report.
 
+  const testData = {data: 
+                      {exp: 40, 
+                      character : {id: 1}, 
+                      level: 2
+                      }
+                  }
+
+  useEffect(() => {
+    setResponseData(testData);
+  }, []);
+  // how did fetch data without using useEffect ?
+
   const handleResponseData = (data) => {
     setResponseData(data);
     console.log("responseData: ", data);
@@ -30,6 +44,12 @@ const MainPage = () => {
     setIsLoading(data);
     // console.log("isLoading: ", data);
   };
+
+  const imgList = {
+                    '1' : [duckBg, duck_1, duck_2, duck_3],
+                    '2' : [penguinBg, penguin_1, penguin_2, penguin_3],
+                    '3' : [woopaBg, woopa_1, woopa_2, woopa_3],
+                  }
 
   return (
     <>
@@ -70,7 +90,7 @@ const MainPage = () => {
         ) : responseData ? ( // Render Updated Character if successfully fetched data
           <div>
             <img
-              src={woopaBg}
+              src={imgList[responseData.data.character.id][0]}
               alt="background"
               style={{ width: "50rem" }}
               className="main_img_border"
@@ -79,39 +99,13 @@ const MainPage = () => {
             {responseData && (
               <img
                 src={
-                  responseData.data.character.id === 1 &&
-                  responseData.data.level === 1
-                    ? duck_1
-                    : responseData.data.character.id === 1 &&
-                      responseData.data.level === 2
-                    ? duck_2
-                    : responseData.data.character.id === 1 &&
-                      responseData.data.level === 3
-                    ? duck_3
-                    : responseData.data.character.id === 2 &&
-                      responseData.data.level === 1
-                    ? penguin_1
-                    : responseData.data.character.id === 2 &&
-                      responseData.data.level === 2
-                    ? penguin_2
-                    : responseData.data.character.id === 2 &&
-                      responseData.data.level === 3
-                    ? penguin_3
-                    : responseData.data.character.id === 3 &&
-                      responseData.data.level === 1
-                    ? woopa_1
-                    : responseData.data.character.id === 3 &&
-                      responseData.data.level === 2
-                    ? woopa_2
-                    : woopa_3
+                  imgList[responseData.data.character.id][responseData.data.level]
                 }
                 alt="character"
                 style={{ width: "25rem" }}
                 className="overlay_char_image"
               />
             )}
-
-            {/* <img src={duck_1} alt="background" style={{ width: "25rem" }} /> */}
           </div>
         ) : (
           // Default
