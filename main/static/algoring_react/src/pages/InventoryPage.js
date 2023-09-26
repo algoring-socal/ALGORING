@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { Col } from "reactstrap";
+import logo from "../img/03.Algoring Logo.png";
 import Character from '../components/Character';
 import inventoryBtn from "../img/03.Library_blank_40px.png";
 import duck_1 from "../img/duck1.png";
@@ -43,38 +45,51 @@ const InventoryPage = () => {
 
   return (
     <>
-    <h1>Inventory Page</h1>
+      <Col className="mt-5 d-flex flex-column justify-content-center align-items-center">
+        {/* Header */}
+        <header className="row logo_img_container" style={{marginBottom : "80px"}git }>
+          <img src={logo} alt="Algoring Logo" />
+        </header>
 
-    {/* Inventory button */}
-    <NavLink to={"/algoring"}>
-        <div>
-          <img
-            style={{ width: "40px" }}
-            className=""
-            src={inventoryBtn}
-            alt="Inventory Button"
-          />
+        <div class="row">
+          {/* Inventory button */}
+          <div class="col-2 d-flex justify-content-end align-items-start">
+            <NavLink to={"/algoring"}>
+              <img
+                style={{ width: "40px" }}
+                className=""
+                src={inventoryBtn}
+                alt="Inventory Button"
+              />
+            </NavLink>
+          </div>
+
+          {/* Charanters Div */}
+          <div class="col-8">
+            <div class="row">
+              { chrList.length && chrList.map((chr) => {
+                  return (
+                    <div class="inventory_img_border">
+                    <Character
+                      key={chr.id}
+                      id={chr.id}
+                      name={chr.name}
+                      chrImg={imgList[chr.name][chr.level - 1]}
+                      level={chr.level}
+                      levelImg=''
+                    />
+                    </div>
+                  );
+                })
+              }`
+            </div>
+          </div>
+
+          <div class="col-2">blank</div>
         </div>
-      </NavLink>
-
-    {/* Charanters Div */}
-    <div>
-      { chrList.length && chrList.map((chr) => {
-          return (
-            <Character
-              key={chr.id}
-              id={chr.id}
-              name={chr.name}
-              chrImg={imgList[chr.name][chr.level - 1]}
-              level={chr.level}
-              levelImg=''
-            />
-          );
-        })
-      }
-    </div>
-    </>
-  )
+      </Col>
+      </>
+    )
 };
 
 export default InventoryPage;

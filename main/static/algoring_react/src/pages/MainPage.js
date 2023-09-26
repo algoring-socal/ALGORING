@@ -28,7 +28,7 @@ const MainPage = () => {
                       character : {id: 1}, 
                       level: 2
                       }
-                  }
+                   }
 
   useEffect(() => {
     setResponseData(testData);
@@ -72,52 +72,60 @@ const MainPage = () => {
           ></div>
         </div>
 
-        {/* Inventory button */}
-        <NavLink to={"/inventory"}>
-        <div>
-          <img
-            style={{ width: "40px" }}
-            className=""
-            src={inventoryBtn}
-            alt="Inventory Button"
-          />
-        </div>
-      </NavLink>
+        <div class="row">
+            {/* Inventory button */}
+            <div class="col d-flex justify-content-end align-items-start">
+              <NavLink to={"/inventory"}>
+                <img
+                  style={{ width: "40px" }}
+                  className=""
+                  src={inventoryBtn}
+                  alt="Inventory Button"
+                />
+              </NavLink>
+            </div>
 
-        {/* Character window */}
-        {isLoading ? ( // Render Loading if isLoading state is true
-          <p>loading...</p>
-        ) : responseData ? ( // Render Updated Character if successfully fetched data
-          <div>
-            <img
-              src={imgList[responseData.data.character.id][0]}
-              alt="background"
-              style={{ width: "50rem" }}
-              className="main_img_border"
-            />
-            {/* render character based on response */}
-            {responseData && (
-              <img
-                src={
-                  imgList[responseData.data.character.id][responseData.data.level]
-                }
-                alt="character"
-                style={{ width: "25rem" }}
-                className="overlay_char_image"
-              />
-            )}
-          </div>
-        ) : (
-          // Default
-          <div>
-            <img
-              src={woopaBg}
-              alt="Algoring Logo"
-              style={{ width: "50rem" }}
-              className="main_img_border"
-            />
-          </div>
-        )}
+              
+            <div>
+              {/* Character window */}
+              {isLoading ? ( // Render Loading if isLoading state is true
+                <p>loading...</p>
+              ) : responseData ? ( // Render Updated Character if successfully fetched data
+                <div class="col">
+                  <img
+                    src={imgList[responseData.data.character.id][0]}
+                    alt="background"
+                    style={{ width: "50rem" }}
+                    className="main_img_border"
+                  />
+                  {/* render character based on response */}
+                  {responseData && (
+                    <img
+                      src={
+                        imgList[responseData.data.character.id][responseData.data.level]
+                      }
+                      alt="character"
+                      style={{ width: "25rem" }}
+                      className="overlay_char_image"
+                    />
+                  )}
+                </div>
+              ) : (
+                // Default
+                <div class="col">
+                  <img
+                    src={woopaBg}
+                    alt="Algoring Logo"
+                    style={{ width: "50rem" }}
+                    className="main_img_border"
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* For spacing */}
+            <div class="col">blank</div>
+        </div>
 
         {/* Start button */}
         <UrlModalBtn
