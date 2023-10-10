@@ -47,17 +47,17 @@ const InventoryPage = () => {
     <>
       <Col className="mt-5 d-flex flex-column justify-content-center align-items-center">
         {/* Header */}
-        <header className="row logo_img_container" style={{marginBottom : "80px"}git }>
+        <header className="row logo_img_container" style={{marginBottom : "80px"}}>
           <img src={logo} alt="Algoring Logo" />
         </header>
 
-        <div class="row">
+        <div className="col-12 d-flex justify-content-center">
+
           {/* Inventory button */}
-          <div class="col-2 d-flex justify-content-end align-items-start">
+          <div className="col-2 d-flex justify-content-end align-items-start">
             <NavLink to={"/algoring"}>
               <img
                 style={{ width: "40px" }}
-                className=""
                 src={inventoryBtn}
                 alt="Inventory Button"
               />
@@ -65,11 +65,10 @@ const InventoryPage = () => {
           </div>
 
           {/* Charanters Div */}
-          <div class="col-8">
-            <div class="row">
+          <div className="col-8 d-flex justify-content-center flex-wrap">
               { chrList.length && chrList.map((chr) => {
                   return (
-                    <div class="inventory_img_border">
+                    <div className="col d-flex justify-content-center inventory_img_border rounded">
                     <Character
                       key={chr.id}
                       id={chr.id}
@@ -81,11 +80,11 @@ const InventoryPage = () => {
                     </div>
                   );
                 })
-              }`
-            </div>
+              }
           </div>
 
-          <div class="col-2">blank</div>
+          {/* For spacing */}
+          <div className="col-2">blank</div>
         </div>
       </Col>
       </>

@@ -72,26 +72,24 @@ const MainPage = () => {
           ></div>
         </div>
 
-        <div class="row">
+        <div className="col-12 d-flex justify-content-center">
             {/* Inventory button */}
-            <div class="col d-flex justify-content-end align-items-start">
+            <div className="col d-flex justify-content-end">
               <NavLink to={"/inventory"}>
                 <img
                   style={{ width: "40px" }}
-                  className=""
                   src={inventoryBtn}
                   alt="Inventory Button"
                 />
               </NavLink>
             </div>
 
-              
             <div>
               {/* Character window */}
               {isLoading ? ( // Render Loading if isLoading state is true
                 <p>loading...</p>
               ) : responseData ? ( // Render Updated Character if successfully fetched data
-                <div class="col">
+                <div className="col">
                   <img
                     src={imgList[responseData.data.character.id][0]}
                     alt="background"
@@ -112,7 +110,7 @@ const MainPage = () => {
                 </div>
               ) : (
                 // Default
-                <div class="col">
+                <div className="col">
                   <img
                     src={woopaBg}
                     alt="Algoring Logo"
@@ -124,7 +122,7 @@ const MainPage = () => {
             </div>
 
             {/* For spacing */}
-            <div class="col">blank</div>
+            <div className="col">blank</div>
         </div>
 
         {/* Start button */}
