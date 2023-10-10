@@ -30,6 +30,30 @@ body {
   border-style: solid;
   border-radius: 25px;
 }
+
+.inventory_img {
+  width:200px;
+  background-color: white;
+}
+
+.level_icon {
+  width: 30px;
+  height: 30px;
+  /* border-radius: 100%; */
+  background-color: #FF007A;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.inventory_img_border {
+  border-width: 8px;
+  border-image: linear-gradient(to bottom, #5f9fff, #105ac7) 1;
+  border-style: solid;
+  /* border-radius: 25px; */
+  margin: 10px;
+}
+
 .overlay_char_image {
   position: absolute;
   top: 50%;
