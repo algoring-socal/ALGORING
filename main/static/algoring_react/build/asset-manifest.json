@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fb4c3a67.css",
-    "main.js": "/static/js/main.79f7a1e9.js",
+    "main.js": "/static/js/main.75c90871.js",
     "static/js/787.974350e8.chunk.js": "/static/js/787.974350e8.chunk.js",
     "static/media/woopa3.png": "/static/media/woopa3.c9606bbbe15a4df74cd6.png",
     "static/media/woopa2.png": "/static/media/woopa2.8ebfadf50128e2a331c2.png",
@@ -13,15 +13,14 @@
     "static/media/penguin3.png": "/static/media/penguin3.9776ab1da4db88ea6c13.png",
     "static/media/penguin1.png": "/static/media/penguin1.810221e01ffc2cdcbaec.png",
     "static/media/woopa BG.png": "/static/media/woopa BG.b7926d93a89edba1875a.png",
-    "static/media/03-1.Logo for Intro.png": "/static/media/03-1.Logo for Intro.664d96ea092da848e0c9.png",
     "static/media/03.Algoring Logo.png": "/static/media/03.Algoring Logo.fd0d2814ac9e73110585.png",
     "index.html": "/index.html",
     "main.fb4c3a67.css.map": "/static/css/main.fb4c3a67.css.map",
-    "main.79f7a1e9.js.map": "/static/js/main.79f7a1e9.js.map",
+    "main.75c90871.js.map": "/static/js/main.75c90871.js.map",
     "787.974350e8.chunk.js.map": "/static/js/787.974350e8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fb4c3a67.css",
-    "static/js/main.79f7a1e9.js"
+    "static/js/main.75c90871.js"
   ]
 }
