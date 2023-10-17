@@ -22,17 +22,16 @@ def main_page(request):
     path_manifest = 'main/static/algoring_react/build/asset-manifest.json'
     path = os.path.join(os.path.dirname(settings.BASE_DIR), path_manifest)
 
-    context['main_js'] = '/static/algoring_react/build/static/js/main.75c90871.js'
-    context['main_css'] = '/static/algoring_react/build/static/css/main.fb4c3a67.css'
+    # context['main_js'] = '/static/algoring_react/build/static/js/main.85c21a0b.js'
+    # context['main_css'] = '/static/algoring_react/build/static/css/main.fb4c3a67.css'
 
     with open(path, 'r') as f:
         assets = json.load(f)
 
-        app_base_path = '/static/algoring/build'
+        app_base_path = '/static/algoring_react/build'
 
-        # context['main_js'] = app_base_path + assets['files']['main.js']
-
-        # context['main_css'] = app_base_path + assets['files']['main.css']
+        context['main_js'] = app_base_path + assets['files']['main.js']
+        context['main_css'] = app_base_path + assets['files']['main.css']
 
     return render(request, 'algoring_template/main.html', context)
     # return render(request, 'algoring_template/main.html')
