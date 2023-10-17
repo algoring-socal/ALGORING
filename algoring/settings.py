@@ -122,10 +122,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "www", "static")
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 # STATICFILES_DIRS = (
-#     BASE_DIR / 'main/static/algoring/build/static',
+#     os.path.join(BASE_DIR, 'static'),
 # )
+
+# MEDIA_URL = '/algoring_react/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'algoring_react/build/static/media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -152,12 +155,6 @@ TEMPLATES = [
         },
     },
 ]
-
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "www", "static")
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 # REST_FRAMEWORK
 # http://www.django-rest-framework.org/api-guide/permissions/
