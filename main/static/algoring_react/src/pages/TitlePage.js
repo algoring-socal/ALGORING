@@ -5,7 +5,7 @@ import logo_lined from "../img/03-1.Logo for Intro.png";
 const TitlePage = () => {
   return (
     <>
-      <h1>HELLO WORLD!!</h1>
+      <h1>안녕하세요</h1>
 
       <NavLink to={"/algoring"}>
         <div style={{ width: "100vw", height: "100vh" }}>
