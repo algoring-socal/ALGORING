@@ -78,13 +78,14 @@ WSGI_APPLICATION = 'algoring.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'algoring_v1',
-    #     'USER': 'postgres',
-    #     'HOST': 'localhost',
-    #     'PORT': 5432
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': os.environ.get('PGSQL_HOST', 'localhost'),
+        'NAME': os.environ.get('PGSQL_NAME', 'algoring_v1'),
+        'USER': os.environ.get('PGSQL_USER', 'default_user'),
+        'PASSWORD': os.environ.get('PGSQL_PASSWORD', 'default_password'),
+        'PORT': 5432
+    }
 }
 
 
